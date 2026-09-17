@@ -20,10 +20,10 @@ app.get('/api/health', (req, res) => {
 // Auth routes - signup and login
 app.use('/api/auth', require('./routes/authRoutes'));
 
-// More routes will be added here in later steps:
-// app.use('/api/rooms', require('./routes/roomRoutes'));
-// app.use('/api/offers', require('./routes/offerRoutes'));
-// app.use('/api/jobs', require('./routes/jobRoutes'));
+// Rooms, offers and jobs
+app.use('/api/rooms', require('./routes/roomRoutes'));
+app.use('/api/offers', require('./routes/offerRoutes'));
+app.use('/api/jobs', require('./routes/jobRoutes'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
